@@ -1,0 +1,7 @@
+parameters:
+#    wiki_stage_web.example.class: WikiStage\Bundle\WebBundle\Example
+
+services:
+#    wiki_stage_web.example:
+#        class: %wiki_stage_web.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

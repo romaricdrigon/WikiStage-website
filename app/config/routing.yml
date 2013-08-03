@@ -1,0 +1,3 @@
+wiki_stage_web:
+    resource: "@WikiStageWebBundle/Resources/config/routing.yml"
+    prefix:   /
