@@ -23,6 +23,8 @@ class AppKernel extends Kernel
             new WikiStage\Bundle\WebBundle\WikiStageWebBundle(),
 
             // vendors
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
