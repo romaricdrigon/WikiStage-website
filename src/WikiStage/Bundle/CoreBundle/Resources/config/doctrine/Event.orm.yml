@@ -1,0 +1,31 @@
+WikiStage\Bundle\CoreBundle\Entity\Event:
+    type: entity
+    table: event
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+        date:
+            type: datetime
+        place: # address or name of the place...
+            type: string
+        description:
+            type: text
+        links:
+            type: json_array
+        # picture
+        gallery_url:
+            type: string
+    oneToMany:
+        videos:
+            targetEntity: Video
+            mappedBy: event
+    manyToMany:
+        speakers: # owning side
+            targetEntity: Speaker
+            inversedBy: events
+

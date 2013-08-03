@@ -1,0 +1,15 @@
+WikiStage\Bundle\CoreBundle\Entity\Tag:
+    type: entity
+    table: tag
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+    manyToMany:
+        videos: # inverse side
+            targetEntity: Video
+            mappedBy: tags

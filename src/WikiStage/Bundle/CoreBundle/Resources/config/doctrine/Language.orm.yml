@@ -1,0 +1,15 @@
+WikiStage\Bundle\CoreBundle\Entity\Language:
+    type: entity
+    table: language
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+    oneToMany:
+        videos:
+            targetEntity: Video
+            mappedBy: language

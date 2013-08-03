@@ -1,0 +1,19 @@
+WikiStage\Bundle\CoreBundle\Entity\Speaker:
+    type: entity
+    table: speaker
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+    oneToMany:
+        videos:
+            targetEntity: Video
+            mappedBy: speaker
+    manyToMany:
+        events: # inverse side
+            targetEntity: Event
+            mappedBy: speakers

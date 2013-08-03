@@ -1,0 +1,41 @@
+WikiStage\Bundle\CoreBundle\Entity\Video:
+    type: entity
+    table: video
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        title:
+            type: string
+        subtitle:
+            type: string
+        excerpt:
+            type: text
+        description:
+            type: text
+            nullable: true
+        media_url:
+            type: string
+        embed_code:
+            type: text
+            nullable: true
+        created_at:
+            type: datetime
+        # picture TODO
+        # staff rating TODO
+    manyToMany:
+        tags: # owning side
+            targetEntity: Tag
+            inversedBy: videos
+    manyToOne:
+        language:
+            targetEntity: Language
+            inversedBy: videos
+        event:
+            targetEntity: Event
+            inversedBy: videos
+        speaker:
+            targetEntity: Speaker
+            inversedBy: videos
