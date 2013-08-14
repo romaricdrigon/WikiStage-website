@@ -11,5 +11,23 @@
                 <argument>WikiStageWebBundle</argument>
             </call>
         </service>
+        <service id="sonata.admin.speaker" class="WikiStage\Bundle\WebBundle\Admin\SpeakerAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Videos" label="Speaker"/>
+            <argument />
+            <argument>WikiStage\Bundle\CoreBundle\Entity\Speaker</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>WikiStageWebBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.language" class="WikiStage\Bundle\WebBundle\Admin\LanguageAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Videos" label="Language"/>
+            <argument />
+            <argument>WikiStage\Bundle\CoreBundle\Entity\Language</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>WikiStageWebBundle</argument>
+            </call>
+        </service>
     </services>
 </container>
