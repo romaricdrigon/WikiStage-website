@@ -9,8 +9,10 @@ WikiStage\Bundle\CoreBundle\Entity\User:
                 strategy: AUTO
         username:
             type: string
+            unique: true
         email:
             type: string
+            unique: true
         salt:
             type: string
         password:
