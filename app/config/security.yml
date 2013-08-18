@@ -1,16 +1,14 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        WikiStage\Bundle\WebBundle\Entity\User: PBKDF2
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    %users%
+        administrators:
+            entity: { class: WikiStageCoreBundle:User, property: username }
 
     firewalls:
         dev:
