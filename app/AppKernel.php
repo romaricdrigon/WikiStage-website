@@ -23,6 +23,9 @@ class AppKernel extends Kernel
             new WikiStage\Bundle\WebBundle\WikiStageWebBundle(),
 
             // vendors
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+
+            // vendors - Sonata related
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
