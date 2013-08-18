@@ -3,7 +3,7 @@ Wikistage website
 
 This is a POC for WikiStage new website, using Symfony2.
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/a31d356d-3a88-439b-9fd5-0e9648a1329d/big.png)](https://insight.sensiolabs.com/projects/a31d356d-3a88-439b-9fd5-0e9648a1329d)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/568dbc28-a81c-4a1a-8931-5c45a7d733be/big.png)](https://insight.sensiolabs.com/projects/568dbc28-a81c-4a1a-8931-5c45a7d733be)
 
 Installation
 ------------
