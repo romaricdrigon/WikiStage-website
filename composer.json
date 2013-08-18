@@ -3,12 +3,14 @@
     "license": "GPL-3.0+",
     "type": "project",
     "description": "The new Wikistage website, using Symfony2",
-    "authors": {
-        "name": "Romaric Drigon",
-        "email": "romaric.drigon[at]gmail.com",
-        "homepage": "http://github.com/romaricdrigon",
-        "role": "Developer"
-    },
+    "authors": [
+        {
+            "name": "Romaric Drigon",
+            "email": "romaric.drigon[at]gmail.com",
+            "homepage": "http://github.com/romaricdrigon",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-0": { "": "src/" }
     },
