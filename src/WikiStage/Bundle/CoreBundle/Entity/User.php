@@ -2,9 +2,10 @@
 
 namespace WikiStage\Bundle\CoreBundle\Entity;
 
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-class User implements UserInterface, \Serializable
+class User implements UserInterface, \Serializable, AdvancedUserInterface
 {
     /**
      * @var integer
@@ -115,5 +116,37 @@ class User implements UserInterface, \Serializable
         list (
             $this->id,
             ) = unserialize($serialized);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function isEnabled()
+    {
+        return $this->isActive;
     }
 }
