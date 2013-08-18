@@ -1,0 +1,19 @@
+WikiStage\Bundle\CoreBundle\Entity\User:
+    type: entity
+    table: user
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        username:
+            type: string
+        email:
+            type: string
+        salt:
+            type: string
+        password:
+            type: string
+        isActive:
+            type: boolean
