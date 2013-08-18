@@ -21,6 +21,7 @@ class LoadUserData implements FixtureInterface
         $admin->setPassword('admin', $encoder);
 
         $manager->persist($admin);
+
         $manager->flush();
     }
 }

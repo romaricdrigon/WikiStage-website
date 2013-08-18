@@ -38,11 +38,15 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
      */
     private $isActive;
 
+    /**
+     * @param null $username
+     * @param null $email
+     */
     public function __construct($username = null, $email = null)
     {
         $this->isActive = true;
-        $this->username = $username;
         $this->email = $email;
+        $this->username = $username;
     }
 
     /**
@@ -75,6 +79,19 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * @param $password string The encoded password
+     * @param PasswordEncoderInterface
+     */
+    public function setPassword($password, PasswordEncoderInterface $encoder)
+    {
+        $this->salt = md5(uniqid(null, true));
+
+        $this->password = $encoder->encodePassword($password, $this->salt);
+
+        return $this;
     }
 
     /**
