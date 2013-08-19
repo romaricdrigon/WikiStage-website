@@ -4,6 +4,7 @@ namespace WikiStage\Bundle\CoreBundle\Entity;
 
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
 
 class User implements UserInterface, \Serializable, AdvancedUserInterface
 {
@@ -37,10 +38,11 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
      */
     private $isActive;
 
-    public function __construct()
+    public function __construct($username = null, $email = null)
     {
         $this->isActive = true;
-        $this->salt = md5(uniqid(null, true));
+        $this->username = $username;
+        $this->email = $email;
     }
 
     /**
@@ -148,5 +150,17 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     public function isEnabled()
     {
         return $this->isActive;
+    }
+
+    /**
+     * @param $password string The encoded password
+     */
+    public function setPassword($password, PasswordEncoderInterface $encoder)
+    {
+        $this->salt = md5(uniqid(null, true));
+
+        $this->password = $encoder->encodePassword($password, $this->salt);
+
+        return $this;
     }
 }

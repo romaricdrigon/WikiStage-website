@@ -2,8 +2,6 @@
 
 namespace WikiStage\Bundle\CoreBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Language
  */
