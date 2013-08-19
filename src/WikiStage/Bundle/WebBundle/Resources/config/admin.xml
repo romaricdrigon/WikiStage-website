@@ -29,5 +29,14 @@
                 <argument>WikiStageWebBundle</argument>
             </call>
         </service>
+        <service id="sonata.admin.user" class="WikiStage\Bundle\WebBundle\Admin\UserAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Admin" label="Admin user"/>
+            <argument />
+            <argument>WikiStage\Bundle\CoreBundle\Entity\User</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>WikiStageWebBundle</argument>
+            </call>
+        </service>
     </services>
 </container>

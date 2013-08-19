@@ -86,6 +86,14 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     }
 
     /**
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
      * @return array|\Symfony\Component\Security\Core\User\Role[]
      */
     public function getRoles()
@@ -162,5 +170,13 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
         $this->password = $encoder->encodePassword($password, $this->salt);
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->username ?: '';
     }
 }
