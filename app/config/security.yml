@@ -1,6 +1,10 @@
 security:
     encoders:
-        WikiStage\Bundle\WebBundle\Entity\User: PBKDF2
+        WikiStage\Bundle\CoreBundle\Entity\User:
+            algorithm:            pbkdf2
+            hash_algorithm:       sha512
+            encode_as_base64:     true
+            iterations:           1000
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER

@@ -18,3 +18,8 @@ Update database schema:
 
 Install assets:
 ``app/console assets:install web --symlink``
+
+Load fixtures:
+``app/console doctrine:fixtures:load``
+
+You can now log in to ``/admin/dashboard`` using ``admin`` username and ``admin`` password.
