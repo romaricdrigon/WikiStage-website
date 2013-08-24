@@ -178,18 +178,6 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     }
 
     /**
-     * @param $password string The encoded password
-     */
-    public function setPassword($password, PasswordEncoderInterface $encoder)
-    {
-        $this->salt = md5(uniqid(null, true));
-
-        $this->password = $encoder->encodePassword($password, $this->salt);
-
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function __toString()
