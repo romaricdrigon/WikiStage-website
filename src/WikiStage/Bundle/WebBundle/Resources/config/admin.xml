@@ -2,6 +2,15 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
+        <service id="sonata.admin.video" class="WikiStage\Bundle\WebBundle\Admin\VideoAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Videos" label="Video"/>
+            <argument />
+            <argument>WikiStage\Bundle\CoreBundle\Entity\Video</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>WikiStageWebBundle</argument>
+            </call>
+        </service>
         <service id="sonata.admin.tag" class="WikiStage\Bundle\WebBundle\Admin\TagAdmin">
             <tag name="sonata.admin" manager_type="orm" group="Videos" label="Tag"/>
             <argument />
@@ -33,6 +42,15 @@
             <tag name="sonata.admin" manager_type="orm" group="Admin" label="Admin user"/>
             <argument />
             <argument>WikiStage\Bundle\CoreBundle\Entity\User</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>WikiStageWebBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.event" class="WikiStage\Bundle\WebBundle\Admin\EventAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Events" label="Event"/>
+            <argument />
+            <argument>WikiStage\Bundle\CoreBundle\Entity\Event</argument>
             <argument>SonataAdminBundle:CRUD</argument>
             <call method="setTranslationDomain">
                 <argument>WikiStageWebBundle</argument>

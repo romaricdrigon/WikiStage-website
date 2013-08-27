@@ -347,4 +347,12 @@ class Video
     {
         return $this->tags;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->title === null ? '' : $this->title;
+    }
 }

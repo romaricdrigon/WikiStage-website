@@ -274,4 +274,12 @@ class Event
     {
         return $this->speakers;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name === null ? '' : $this->name;
+    }
 }

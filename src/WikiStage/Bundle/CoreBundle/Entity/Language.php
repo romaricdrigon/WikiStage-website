@@ -95,4 +95,12 @@ class Language
     {
         return $this->videos;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name === null ? '' : $this->name;
+    }
 }
