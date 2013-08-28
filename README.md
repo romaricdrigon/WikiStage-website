@@ -8,18 +8,12 @@ This is a POC for WikiStage new website, using Symfony2.
 Installation
 ------------
 
-Get files, create a database.
-Copy ``parameters.yml.dist`` to ``parameters.yml``a nd customize values.
+Copy ``parameters.yml.dist`` to ``parameters.yml`` and customize values.
 
 Run composer - typically ``composer install`` (do not update at first!).
 
-Update database schema:
-``app/console doctrine:schema:update --force``
-
-Install assets:
-``app/console assets:install web --symlink``
-
-Load fixtures:
-``app/console doctrine:fixtures:load``
+Run ``./reset.sh`` script.
+It will clear cache, [clear and] create the database, load fixtures.
+It'll dump assets too, by default in ``prod`` mode (dumped once for all), you can alter change this: ``./reset.sh dev``
 
 You can now log in to ``/admin/dashboard`` using ``admin`` username and ``admin`` password.
