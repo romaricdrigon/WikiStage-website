@@ -14,7 +14,14 @@ rm -rf app/cache/*
 ./app/console doctrine:fixtures:load --fixtures src/WikiStage/Bundle/CoreBundle/DataFixtures/ORM/
 
 # Web folder
-./app/console assets:install --symlink web
+if [[ -n "$1" && "$1" == "dev" ]]
+then
+    # Dev mode - symlinked
+    ./app/console assets:install --symlink web
+else
+    # Prod, static copy
+    ./app/console assets:install web
+fi
 
 # Dump assets
 if [[ -n "$1" && "$1" == "dev" ]]
