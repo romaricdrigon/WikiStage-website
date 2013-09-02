@@ -46,6 +46,9 @@
             <call method="setTranslationDomain">
                 <argument>WikiStageWebBundle</argument>
             </call>
+            <call method="setEncoderFactory">
+                <argument type="service" id="security.encoder_factory" />>
+            </call>
         </service>
         <service id="sonata.admin.event" class="WikiStage\Bundle\WebBundle\Admin\EventAdmin">
             <tag name="sonata.admin" manager_type="orm" group="Events" label="Event"/>
