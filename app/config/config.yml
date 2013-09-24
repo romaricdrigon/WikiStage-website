@@ -91,5 +91,32 @@ sonata_admin:
 
     dashboard:
         blocks:
-            # display a dashboard block
-            - { position: left, type: sonata.admin.block.admin_list }
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups:
+                        - ws.admin.group.videos
+                        - ws.admin.group.events
+            -
+                position: right
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups:
+                        - ws.admin.group.admin
+        groups:
+            ws.admin.group.events:
+                label: "Events"
+                items:
+                    - sonata.admin.event
+            ws.admin.group.videos:
+                label: "Videos"
+                items:
+                    - sonata.admin.video
+                    - sonata.admin.tag
+                    - sonata.admin.speaker
+                    - sonata.admin.language
+            ws.admin.group.admin:
+                label: "Website administration"
+                items:
+                    - sonata.admin.user

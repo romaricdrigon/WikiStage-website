@@ -3,7 +3,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <service id="sonata.admin.video" class="WikiStage\Bundle\WebBundle\Admin\VideoAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Videos" label="Video"/>
+            <tag name="sonata.admin" manager_type="orm" label="Video"/>
             <argument />
             <argument>WikiStage\Bundle\CoreBundle\Entity\Video</argument>
             <argument>SonataAdminBundle:CRUD</argument>
@@ -12,7 +12,7 @@
             </call>
         </service>
         <service id="sonata.admin.tag" class="WikiStage\Bundle\WebBundle\Admin\TagAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Videos" label="Tag"/>
+            <tag name="sonata.admin" manager_type="orm" label="Tag"/>
             <argument />
             <argument>WikiStage\Bundle\CoreBundle\Entity\Tag</argument>
             <argument>SonataAdminBundle:CRUD</argument>
@@ -21,7 +21,7 @@
             </call>
         </service>
         <service id="sonata.admin.speaker" class="WikiStage\Bundle\WebBundle\Admin\SpeakerAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Videos" label="Speaker"/>
+            <tag name="sonata.admin" manager_type="orm" label="Speaker"/>
             <argument />
             <argument>WikiStage\Bundle\CoreBundle\Entity\Speaker</argument>
             <argument>SonataAdminBundle:CRUD</argument>
@@ -30,7 +30,7 @@
             </call>
         </service>
         <service id="sonata.admin.language" class="WikiStage\Bundle\WebBundle\Admin\LanguageAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Videos" label="Language"/>
+            <tag name="sonata.admin" manager_type="orm" label="Language"/>
             <argument />
             <argument>WikiStage\Bundle\CoreBundle\Entity\Language</argument>
             <argument>SonataAdminBundle:CRUD</argument>
@@ -38,19 +38,19 @@
                 <argument>WikiStageWebBundle</argument>
             </call>
         </service>
-        <service id="sonata.admin.user" class="WikiStage\Bundle\WebBundle\Admin\UserAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Admin" label="Admin user"/>
+        <service id="sonata.admin.event" class="WikiStage\Bundle\WebBundle\Admin\EventAdmin">
+            <tag name="sonata.admin" manager_type="orm" label="Event"/>
             <argument />
-            <argument>WikiStage\Bundle\CoreBundle\Entity\User</argument>
+            <argument>WikiStage\Bundle\CoreBundle\Entity\Event</argument>
             <argument>SonataAdminBundle:CRUD</argument>
             <call method="setTranslationDomain">
                 <argument>WikiStageWebBundle</argument>
             </call>
         </service>
-        <service id="sonata.admin.event" class="WikiStage\Bundle\WebBundle\Admin\EventAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Events" label="Event"/>
+        <service id="sonata.admin.user" class="WikiStage\Bundle\WebBundle\Admin\UserAdmin">
+            <tag name="sonata.admin" manager_type="orm" label="Admin user"/>
             <argument />
-            <argument>WikiStage\Bundle\CoreBundle\Entity\Event</argument>
+            <argument>WikiStage\Bundle\CoreBundle\Entity\User</argument>
             <argument>SonataAdminBundle:CRUD</argument>
             <call method="setTranslationDomain">
                 <argument>WikiStageWebBundle</argument>
