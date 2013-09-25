@@ -17,14 +17,19 @@ class EventAdmin extends Admin
                 ->add('description', null, array(
                     'required'  => false
                 ))
-                ->add('date')
-                ->add('place')
+                ->add('date', 'datetime', array(
+                    'date_widget'   => 'single_text',
+                    'time_widget'   => 'single_text'
+                ))
+                ->add('place', 'genemu_jquerygeolocation', array(
+                    'map'   => true
+                ))
             ->end()
             ->with('Web related')
                 ->add('links', null, array(
                     'required'  => false
                 ))
-                ->add('gallery_url', null, array(
+                ->add('gallery_url', 'url', array(
                     'required'  => false
                 ))
             ->end()

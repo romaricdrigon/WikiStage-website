@@ -24,6 +24,7 @@ class AppKernel extends Kernel
 
             // vendors
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new \Genemu\Bundle\FormBundle\GenemuFormBundle(),
 
             // vendors - Sonata related
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
