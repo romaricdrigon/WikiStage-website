@@ -55,6 +55,9 @@
             <call method="setTranslationDomain">
                 <argument>WikiStageWebBundle</argument>
             </call>
+            <call method="setEncoderFactory">
+                <argument type="service" id="security.encoder_factory" />>
+            </call>
         </service>
     </services>
 </container>

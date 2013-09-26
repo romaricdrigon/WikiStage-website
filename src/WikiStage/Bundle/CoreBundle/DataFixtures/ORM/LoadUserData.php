@@ -4,21 +4,31 @@ namespace WikiStage\Bundle\CoreBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Symfony\Component\Security\Core\Encoder\Pbkdf2PasswordEncoder;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use WikiStage\Bundle\CoreBundle\Entity\User;
 
-class LoadUserData implements FixtureInterface
+class LoadUserData implements FixtureInterface, ContainerAwareInterface
 {
+    /**
+     * @var ContainerInterface container
+     */
+    protected $container;
+
+    /**
+     * @param ContainerInterface $container
+     */
+    public function setContainer(ContainerInterface $container = null)
+    {
+        $this->container = $container;
+    }
+
     public function load(ObjectManager $manager)
     {
+        $encoderFactory = $this->container->get('security.encoder_factory');
+
         $admin = new User('admin', 'admin@example.com');
-
-        // Insight raise a violaton when injecting the container,
-        // so while this false positive is fixed,
-        // we directly create an encoder object
-        $encoder = new Pbkdf2PasswordEncoder();
-
-        $admin->setPassword('admin', $encoder);
+        $admin->setPassword('admin', $encoderFactory->getEncoder($admin));
 
         $manager->persist($admin);
 
