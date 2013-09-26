@@ -12,7 +12,9 @@ class LanguageAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name')
+            ->add('name', null, array(
+                    'help'  => 'The translated name, such as "Français"'
+                ))
         ;
     }
 
