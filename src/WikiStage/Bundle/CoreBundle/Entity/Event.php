@@ -2,6 +2,8 @@
 
 namespace WikiStage\Bundle\CoreBundle\Entity;
 
+use Genemu\Bundle\FormBundle\Geolocation\AddressGeolocation;
+
 /**
  * Event
  */
@@ -23,9 +25,14 @@ class Event
     private $date;
 
     /**
-     * @var string
+     * @var string place name
      */
     private $place;
+
+    /**
+     * @var AddressGeolocation address
+     */
+    private $address;
 
     /**
      * @var string
@@ -33,9 +40,18 @@ class Event
     private $description;
 
     /**
-     * @var array
+     * @var array of links (URL)
+     * Keys are enforced (immutable array), so we must initialize it
      */
-    private $links;
+    private $links = array(
+        'facebook'  => null,
+        'flickr'    => null,
+        'googleplus' => null, // LOL
+        'other'     => null,
+        'tickets'   => null,
+        'twitter'   => null,
+        'website'   => null
+    );
 
     /**
      * @var string
@@ -126,18 +142,41 @@ class Event
     public function setPlace($place)
     {
         $this->place = $place;
-    
+
         return $this;
     }
 
     /**
      * Get place
      *
-     * @return string 
+     * @return string
      */
     public function getPlace()
     {
         return $this->place;
+    }
+
+    /**
+     * Set address
+     *
+     * @param AddressGeolocation $address
+     * @return Event
+     */
+    public function setAddress(AddressGeolocation $address)
+    {
+        $this->address = $address;
+    
+        return $this;
+    }
+
+    /**
+     * Get $address
+     *
+     * @return AddressGeolocation
+     */
+    public function getAddress()
+    {
+        return $this->address;
     }
 
     /**
@@ -169,7 +208,7 @@ class Event
      * @param array $links
      * @return Event
      */
-    public function setLinks($links)
+    public function setLinks(array $links)
     {
         $this->links = $links;
     

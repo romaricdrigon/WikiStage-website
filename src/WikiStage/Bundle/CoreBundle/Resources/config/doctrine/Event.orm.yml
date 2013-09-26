@@ -1,29 +1,35 @@
 WikiStage\Bundle\CoreBundle\Entity\Event:
-    type: entity
-    table: event
+    type:   entity
+    table:  event
     fields:
         id:
-            type: integer
-            id: true
+            type:       integer
+            id:         true
             generator:
                 strategy: AUTO
         name:
-            type: string
+            type:       string
         date:
-            type: datetime
-        place: # address or name of the place...
-            type: string
+            type:       datetime
+        place:
+            type:       string
+        address: # Will be an object of class Genemu\Bundle\FormBundle\Geolocation\AddressGeolocation
+            type:       object
+            nullable:   true
         description:
-            type: text
+            type:       text
+            nullable:   true
         links:
-            type: json_array
+            type:       json_array
+            nullable:   true
         # picture
         gallery_url:
-            type: string
+            type:       string
+            nullable:   true
     oneToMany:
         videos:
             targetEntity: Video
-            mappedBy: event
+            mappedBy:   event
     manyToMany:
         speakers: # owning side
             targetEntity: Speaker

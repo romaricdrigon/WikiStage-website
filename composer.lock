@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f2e4d2f8140fdbce169b741fe6a0efb7",
+    "hash": "123caaa3dfc80c1bef566aede13237c0",
     "packages": [
         {
             "name": "doctrine/common",
@@ -392,17 +392,17 @@
         },
         {
             "name": "genemu/form-bundle",
-            "version": "v2.2.1",
+            "version": "dev-master",
             "target-dir": "Genemu/Bundle/FormBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/genemu/GenemuFormBundle.git",
-                "reference": "78fcd307a69b499241d7f0fa5c1b378e77358f16"
+                "url": "https://github.com/romaricdrigon/GenemuFormBundle.git",
+                "reference": "dfc1e32a0f5bcb11e032484b75a2f2d186a2f6ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/genemu/GenemuFormBundle/zipball/78fcd307a69b499241d7f0fa5c1b378e77358f16",
-                "reference": "78fcd307a69b499241d7f0fa5c1b378e77358f16",
+                "url": "https://api.github.com/repos/romaricdrigon/GenemuFormBundle/zipball/dfc1e32a0f5bcb11e032484b75a2f2d186a2f6ee",
+                "reference": "dfc1e32a0f5bcb11e032484b75a2f2d186a2f6ee",
                 "shasum": ""
             },
             "require": {
@@ -436,7 +436,6 @@
                     "Genemu\\Bundle\\FormBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -446,12 +445,12 @@
                     "email": "olivier@generation-multiple.com"
                 },
                 {
-                    "name": "Community contributions",
-                    "homepage": "https://github.com/genemu/GenemuFormBundle/contributors"
-                },
-                {
                     "name": "Bilal Amarni",
                     "email": "bilal.amarni@gmail.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/genemu/GenemuFormBundle/contributors"
                 }
             ],
             "description": "Extra form types for your Symfony2 projects",
@@ -459,7 +458,10 @@
                 "extra form",
                 "form"
             ],
-            "time": "2013-07-31 22:28:58"
+            "support": {
+                "source": "https://github.com/romaricdrigon/GenemuFormBundle/tree/master"
+            },
+            "time": "2013-09-26 09:00:52"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -609,7 +611,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -1773,11 +1775,12 @@
     "stability-flags": {
         "sonata-project/admin-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20,
+        "genemu/form-bundle": 20,
         "doctrine/data-fixtures": 20,
         "doctrine/doctrine-fixtures-bundle": 20
     },
     "platform": {
-        "php": ">=5.4.4"
+        "php": ">=5.3.3"
     },
     "platform-dev": [
 
